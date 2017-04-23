@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="weg-WX-ci4">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Map View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="Pulpo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dCH-He-AMw" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="440"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="440" id="3if-6H-Q1Z"/>
+                                </constraints>
+                            </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Selecciona tu punto objetivo" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p4x-o0-GKl" customClass="DesignableUITextField" customModule="Pulpo" customModuleProvider="target">
+                                <rect key="frame" x="16" y="59" width="288" height="41"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="288" id="D6r-fz-M8X"/>
+                                    <constraint firstAttribute="height" constant="41" id="zX1-5s-h1x"/>
+                                </constraints>
+                                <color key="textColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="target"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" red="0.88972894700000005" green="0.88972894700000005" blue="0.88972894700000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_me" translatesAutoresizingMaskIntoConstraints="NO" id="1pp-VH-cE0">
+                                <rect key="frame" x="145" y="256.5" width="30" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZC1-7p-LXS">
+                                <rect key="frame" x="0.0" y="440" width="320" height="128"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QtU-RS-ZMX">
+                                        <rect key="frame" x="210" y="8" width="102" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.20483557932049368" green="0.58778035828464215" blue="0.75408679246902466" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <state key="normal" title="CONFIRMAR">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="startGoTarget:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nqE-Il-HOz"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cbm-A7-xZK">
+                                        <rect key="frame" x="8" y="0.0" width="202" height="70"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dau-8c-8eb">
+                                        <rect key="frame" x="8" y="78" width="167" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                        <color key="textColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8fl-YR-YjV">
+                                        <rect key="frame" x="216" y="84" width="90" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.20483557929999999" green="0.58778035829999997" blue="0.75408679249999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <state key="normal" title="REINICIAR">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btn_RestarTarget:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bEW-GX-95Y"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ZC1-7p-LXS" firstAttribute="top" secondItem="dCH-He-AMw" secondAttribute="bottom" id="1sG-iE-rdJ"/>
+                            <constraint firstItem="p4x-o0-GKl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8qc-iv-Fsz"/>
+                            <constraint firstAttribute="trailing" secondItem="ZC1-7p-LXS" secondAttribute="trailing" id="97G-5i-SEe"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ZC1-7p-LXS" secondAttribute="bottom" id="9qB-zE-XE1"/>
+                            <constraint firstItem="dCH-He-AMw" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="FTZ-eC-M8Z"/>
+                            <constraint firstItem="dCH-He-AMw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Nmv-hY-JWv"/>
+                            <constraint firstAttribute="trailing" secondItem="dCH-He-AMw" secondAttribute="trailing" id="WiJ-sv-Sqn"/>
+                            <constraint firstItem="dCH-He-AMw" firstAttribute="top" secondItem="p4x-o0-GKl" secondAttribute="bottom" constant="-100" id="eIt-4r-thj"/>
+                            <constraint firstItem="ZC1-7p-LXS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="zOQ-iQ-B2l"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="3VI-Ez-lWT"/>
+                    <connections>
+                        <outlet property="btn_confirmTarget" destination="QtU-RS-ZMX" id="r8B-Wb-NY4"/>
+                        <outlet property="btn_restarTarget" destination="8fl-YR-YjV" id="zlM-Iv-hct"/>
+                        <outlet property="confirmTarget" destination="ZC1-7p-LXS" id="SO9-II-r5a"/>
+                        <outlet property="distanceToTargetLabel" destination="Dau-8c-8eb" id="7I2-gg-a97"/>
+                        <outlet property="heightMapView" destination="3if-6H-Q1Z" id="b8v-6s-Kvm"/>
+                        <outlet property="mapCenterPin" destination="1pp-VH-cE0" id="pzq-Fw-P58"/>
+                        <outlet property="mapView" destination="dCH-He-AMw" id="Qmk-Ju-Xa2"/>
+                        <outlet property="nameTargetLabel" destination="Cbm-A7-xZK" id="Hss-dM-ajg"/>
+                        <outlet property="placeTextField" destination="p4x-o0-GKl" id="M5o-oq-scw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="890.625" y="-559.85915492957747"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fA2-iZ-GKR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="weg-WX-ci4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mYM-1G-Wqr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="wil-sv-dWj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gN1-7u-jrq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="-559.07046476761627"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icon_me" width="30" height="55"/>
+        <image name="target" width="32" height="32"/>
+    </resources>
+</document>
