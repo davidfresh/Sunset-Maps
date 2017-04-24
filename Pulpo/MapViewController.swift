@@ -132,11 +132,11 @@ class MapViewController: UIViewController{
       UNUserNotificationCenter.current().getNotificationSettings { (notificationSettings) in
         switch notificationSettings.authorizationStatus {
         case .notDetermined:
-          requestAuthorization(completionHandler: { (success) in
+          self.requestAuthorization(completionHandler: { (success) in
             guard success else { return }
           })
         case .authorized:
-          mapLocalNotification(mensaje)
+          self.mapLocalNotification(mensaje)
         case .denied:
           print("Application Not Allowed to Display Notifications")
         }
@@ -144,35 +144,33 @@ class MapViewController: UIViewController{
     } else {
       // Fallback on earlier versions
     }
-    
+  }
     func requestAuthorization(completionHandler: @escaping (_ success: Bool) -> ()) {
-      // Request Authorization
-      if #available(iOS 10.0, *) {
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (success, error) in
-          if let error = error {
-            print("Request Authorization Failed (\(error), \(error.localizedDescription))")
-          }
-          
-          completionHandler(success)
+        // Request Authorization
+        if #available(iOS 10.0, *) {
+            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (success, error) in
+                if let error = error {
+                    print("Request Authorization Failed (\(error), \(error.localizedDescription))")
+                }
+                
+                completionHandler(success)
+            }
+        } else {
+            // Fallback on earlier versions
         }
-      } else {
-        // Fallback on earlier versions
-      }
     }
     
     //MARK: Configure Notification Content
     func mapLocalNotification(_ Msj:String) {
-      notificationContent.title = "Pulpo"
-      notificationContent.body = Msj
-      let notificationRequest = UNNotificationRequest(identifier: "pulpo_local_notification", content: notificationContent, trigger: nil)
-      UNUserNotificationCenter.current().add(notificationRequest) { (error) in
-        if let error = error {
-          print("Unable to Add Notification Request (\(error), \(error.localizedDescription))")
+        notificationContent.title = "Pulpo"
+        notificationContent.body = Msj
+        let notificationRequest = UNNotificationRequest(identifier: "pulpo_local_notification", content: notificationContent, trigger: nil)
+        UNUserNotificationCenter.current().add(notificationRequest) { (error) in
+            if let error = error {
+                print("Unable to Add Notification Request (\(error), \(error.localizedDescription))")
+            }
         }
-      }
     }
-    
-  }
   
 }
 
